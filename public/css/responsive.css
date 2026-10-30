@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Smart AI Chatbot - Responsive Design & Mobile Breakpoints
+   ========================================================================== */
+
+/* Tablet & Mobile Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  /* Sidebar Drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 990;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  /* Chat Header */
+  .chat-header {
+    padding: 0 12px;
+  }
+
+  .header-toggle-btn {
+    display: flex !important;
+  }
+
+  .header-title {
+    max-width: 180px;
+    font-size: 13.5px;
+  }
+
+  .model-select-btn {
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+
+  /* Welcome Screen */
+  .welcome-screen {
+    padding: 24px 16px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .welcome-subtitle {
+    font-size: 13.5px;
+    margin-bottom: 24px;
+  }
+
+  .prompt-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .prompt-card {
+    padding: 12px 14px;
+  }
+
+  /* Messages */
+  .messages-container {
+    padding: 16px 14px 28px;
+    gap: 18px;
+  }
+
+  .chat-message {
+    gap: 10px;
+  }
+
+  .chat-message.user .msg-bubble {
+    max-width: 90%;
+    padding: 10px 14px;
+    font-size: 14.5px;
+  }
+
+  .msg-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* Chat Input */
+  .chat-input-wrapper {
+    padding: 8px 12px 14px;
+  }
+
+  .input-form {
+    padding: 8px 10px;
+  }
+
+  #chatTextarea {
+    font-size: 14px;
+  }
+
+  .input-footer-note {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+
+  /* Settings Modal */
+  .modal-card {
+    max-width: 100%;
+    margin: 12px;
+  }
+
+  .modal-body {
+    padding: 18px;
+    gap: 16px;
+  }
+
+  .modal-header, .modal-footer {
+    padding: 14px 18px;
+  }
+}
+
+/* Small Smartphone Breakpoint (<= 480px) */
+@media (max-width: 480px) {
+  .header-title {
+    display: none;
+  }
+
+  .welcome-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+  }
+
+  .welcome-title {
+    font-size: 21px;
+  }
+
+  .welcome-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    text-align: center;
+  }
+
+  .chat-message.user .msg-bubble {
+    max-width: 95%;
+  }
+
+  .code-block-container pre {
+    padding: 10px 12px;
+    font-size: 12.5px;
+  }
+}
+
+/* Desktop sidebar collapsing state */
+@media (min-width: 769px) {
+  .sidebar.collapsed {
+    margin-left: calc(-1 * var(--sidebar-width));
+  }
+
+  .sidebar-backdrop {
+    display: none !important;
+  }
+}
